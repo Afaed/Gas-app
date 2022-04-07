@@ -6,8 +6,8 @@ const sectionThree = () => {
                 <div className="container my-5 py-5">
                     <div className="row mb-5">
                         <div className="col-12">
-                        <h3 className="fs-5 text-center mb-0">Text</h3>
-                            <h1 className="display-6 text-center mb-4">Write Some <b>Text</b></h1>
+                        <h3 className="fs-5 text-center mb-0">Registration</h3>
+                            <h1 className="display-6 text-center mb-4">Join the <b>Pump Plunder</b> community</h1>
                             <hr className="w-25 mx-auto"/>
                         </div>
                     </div>

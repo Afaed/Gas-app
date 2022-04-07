@@ -26,7 +26,7 @@ const Navbar = () => {
           <a class="nav-link" href="#">Link</a>
         </li>
          </ul>
-      <a class ="navbar-brand fw-bolder fs-4 mx-auto" href="#">Navbar</a>
+      <a class ="navbar-brand fw-bolder fs-4 mx-auto" href="#"></a>
       <button className="btn btn-outline-primary ms-auto px-4 rounded-pill">
           <i className="fa fa-sign-in me-2"></i>Login</button>
       <button to="/register" className="btn btn-outline-primary ms-2 px-4 rounded-pill">
