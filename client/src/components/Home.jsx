@@ -11,7 +11,7 @@ const Home = () => {
                 <p className="lead text-center fs-4 mb-5 text-white">Running on E? Find a cheap fill with Pump Plunder</p>
                 <div className="buttons d-flex justify-content-center">
                     <button className="btn btn-light me-4 round-pill px-4 py-2">Gas Near Me</button>
-                    <button className="btn btn-outline-light me-4 round-pill px-4 py-2"></button>
+                    <button className="btn btn-outline-light me-4 round-pill px-4 py-2"> Reviews </button>
                 </div>
             </div>
         </div>

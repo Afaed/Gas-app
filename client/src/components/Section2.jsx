@@ -18,8 +18,8 @@ const Section2 = () => {
   
   <div class="card-body text-center">
       <i className="fa fa-car fa-4x mb-4 text-primary"></i>
-    <h5 class="card-title mb-3 fs-4 fw-bold">Card title</h5>
-    <p class="card-text lead">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title mb-3 fs-4 fw-bold">User review 1</h5>
+  <p class="card-text lead">Wow Pump Plunder is so great. Got a cheap tank at Arco</p>
   </div>
 </div>
                         </div>
@@ -28,7 +28,7 @@ const Section2 = () => {
   
   <div class="card-body text-center">
       <i className="fa fa-money fa-4x mb-4 text-primary"></i>
-    <h5 class="card-title mb-3 fs-4 fw-bold">Card title</h5>
+    <h5 class="card-title mb-3 fs-4 fw-bold">user2 review</h5>
     <p class="card-text lead">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
