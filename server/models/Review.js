@@ -5,7 +5,8 @@ const reviewSchema = new Schema(
     {
         stationId: {
           type: String,
-            
+          required: true,
+          unique: true
         },
         reviewText: {
             type: String,
