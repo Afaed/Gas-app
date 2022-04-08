@@ -6,6 +6,7 @@ type User {
     username: String
     password: String
     email: String
+    reviews: Review
 }
 
 type Query {
@@ -19,7 +20,14 @@ type Mutation {
 type Auth {
     token: ID!
     user: User
-  }
-`
+ }
+
+type Review {
+    reviewText: String
+    createdAt: Date
+    username: String!
+}
+
+`;
 
 module.exports = typeDefs
