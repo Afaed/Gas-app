@@ -7,8 +7,8 @@ const Section2 = () => {
                 <div className="container my-5 py-5">
                     <div className="row">
                         <div className="col-12">
-                            <h3 className="fs-5 text-center mb-0">Text</h3>
-                            <h1 className="display-6 text-center mb-4">Write <b>Text</b> Here</h1>
+                            <h3 className="fs-5 text-center mb-0"></h3>
+                            <h1 className="display-6 text-center mb-4">User Reviews</h1>
                             <hr className="w-25 mx-auto"/>
                         </div>
                     </div>
