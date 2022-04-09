@@ -8,6 +8,7 @@
 /*Section 1*/
 #sectionone{
   background: #a29e92;
+  background: linear-gradient(90deg, #a29e92 50%, gold 100%);
   min-height: 600px;
 }
 
@@ -32,4 +33,14 @@
   background: rgb(0,101,219);
   background: linear-gradient(90deg, rgb(0,101,219) 40%, rgba(0, 212, 255, 1) 100%);
   min-height: 500px;  
+}
+
+/*Login*/
+#login{
+  background: black;
+}
+
+/*register*/
+#register{
+  background: black;
 }
