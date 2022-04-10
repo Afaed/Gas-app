@@ -26,6 +26,11 @@
 /*Cards*/
 .card{
   transition: all 0.5s ease;
+  color: goldenrod;
+}
+
+.card-body{
+  background-color: black;
 }
 
 .card:hover{
