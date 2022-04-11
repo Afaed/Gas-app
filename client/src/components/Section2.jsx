@@ -14,17 +14,18 @@ const Section2 = () => {
                     </div>
                     <div className="row mt-5">
                         <div className="col-md-4">
-                        <div class="card p-3">
+                        <div class="card p-3 bg-black">
   
   <div class="card-body text-center">
       <i className="fa fa-car fa-4x mb-4 text-primary"></i>
     <h5 class="card-title mb-3 fs-4 fw-bold">Patric A.</h5>
     <p class="card-text lead">The man behind the counter was very nice. However the soda I bought tastes just like whatever air freshener they use in the store. At least I hope that was your freshener. Gross.</p>
+      
   </div>
 </div>
                         </div>
                         <div className="col-md-4">
-                        <div class="card p-3">
+                        <div class="card p-3 bg-black">
   
   <div class="card-body text-center">
       <i className="fa fa-money fa-4x mb-4 text-primary"></i>
@@ -34,7 +35,7 @@ const Section2 = () => {
 </div>
                         </div>
                         <div className="col-md-4">
-                        <div class="card p-3">
+                        <div class="card p-3 bg-black">
   
   <div class="card-body text-center">
       <i className="fa fa-area-chart fa-4x mb-4 text-primary"></i>
@@ -44,7 +45,7 @@ const Section2 = () => {
 </div>
                         </div>
                         <div className="col-md-4">
-                        <div class="card p-3">
+                        <div class="card p-3 bg-black">
   
   <div class="card-body text-center">
       <i className="fa fa-car fa-4x mb-4 text-primary"></i>
@@ -54,7 +55,7 @@ const Section2 = () => {
 </div>
                         </div>
                         <div className="col-md-4">
-                        <div class="card p-3">
+                        <div class="card p-3 bg-black">
   
   <div class="card-body text-center">
       <i className="fa fa-car fa-4x mb-4 text-primary"></i>
@@ -64,7 +65,7 @@ const Section2 = () => {
 </div>
                         </div>
                         <div className="col-md-4">
-                        <div class="card p-3">
+                        <div class="card p-3 bg-black">
   
   <div class="card-body text-center">
       <i className="fa fa-car fa-4x mb-4 text-primary"></i>
