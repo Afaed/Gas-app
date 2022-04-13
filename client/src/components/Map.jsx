@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import {GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 const sampleObj = require('../utils/sample-obj');
  // let gasStations = {};
-let gsMarkers = [];
+let gsMarkers = JSON.parse(sampleObj);
+console.log(gsMarkers);
 let userLocation = {};
 let endPoint = '';
 
@@ -46,8 +47,6 @@ function getStations(endpoint) {
     // gasStations = JSON.parse(sampleObj.replace(/'/g, '"'));
     // console.log(sampleObj);
 
-    gsMarkers = sampleObj;
-
 }
 
 function writeEndPoint(lat, lng) {
@@ -58,9 +57,10 @@ function writeEndPoint(lat, lng) {
 
 function setCurrentPosition( position ) { 
 
-    userLocation = {"lat": position.coords.latitude, "lng": position.coords.longitude};
-    // userLocation = {"lat": 37.7298605, "lng": -122.1391877};
-    writeEndPoint(position.coords.latitude, position.coords.longitude);
+    // userLocation = {"lat": position.coords.latitude, "lng": position.coords.longitude};
+    userLocation = {lat: 37.7298605, lng: -122.1391877};
+    // writeEndPoint(position.coords.latitude, position.coords.longitude);
+    // writeEndPoint(37.7298605, -122.1391877);
 }
 
 function positionError( error ) { 
@@ -72,11 +72,16 @@ navigator.geolocation.getCurrentPosition(setCurrentPosition, positionError);
 
 const NestedMapDependencies = () => {
 
+    
+
     return <GoogleMap 
             zoom={10} 
             center={userLocation}
             mapContainerClassName="map-container"
         >
+            {gsMarkers.map((station) => (
+                <Marker key={station.id} position={{lat: station.location[0], lng: station.location[1]}} />
+            ))}
             <Marker position={userLocation} />
 
             {}
@@ -87,11 +92,11 @@ const NestedMapDependencies = () => {
 const Map = () => {
 
     const { isLoaded } = useLoadScript({
-        //googleMapsApiKey: "AIzaSyBRm3itj6oBIld55_PLJzQ6noL1aF3w_Uk"
+        googleMapsApiKey: "AIzaSyBRm3itj6oBIld55_PLJzQ6noL1aF3w_Uk"
     });
 
     if (!isLoaded) return <div>Loading...</div>;
-    //return <NestedMapDependencies />;
+    return <NestedMapDependencies />;
     
 }
 
