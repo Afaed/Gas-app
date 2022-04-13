@@ -6,12 +6,12 @@ const RegisterSchema = new Schema ({
         required: true,
         unique: true
     },
-    UserEmail: {
+    Email: {
         type: String,
         required: true,
         unique: true
     },
-    UserPassword: {
+    Password: {
         type: String,
         required: true,
         unique: true

@@ -1,16 +1,16 @@
 const { Schema, model } = require('mongoose');
 
 const LoginSchema = new Schema ({
-    UserEmail: {
+    Email: {
         type: String,
         required: true,
         unique: true
     },
-    UserPassword: {
+    Password: {
         type: String,
         required: true,
         unique: true
-    }
+    },
 })
 
 const Login = model('Login', LoginSchema);

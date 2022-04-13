@@ -1,6 +1,13 @@
+import { model, models } from "mongoose";
 import React from "react";
 import { navigate, useNavigate } from "react-router-dom"
+// import {Login} from './source/models/login.js'
 
+function Form() 
+  function handleForm(e) {
+    e.preventDefault();
+    console.log('You clicked submit.');
+  }
 
 function Login() {
     let navigate = useNavigate();
@@ -43,10 +50,11 @@ function Login() {
                 />
               </div>
              
+              <form onSubmit={handleSubmit}>
               <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill">
                 Login
               </button>
-           
+            </form>           
           </div>
         </div>
       </div>
