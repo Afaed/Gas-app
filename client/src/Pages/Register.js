@@ -4,6 +4,12 @@ import { navigate, useNavigate } from "react-router-dom"
 import { ADD_USER } from '../utils/mutations.js'
 import Auth from '../utils/auth'
 
+function Form() 
+  function handleForm(e) {
+    e.preventDefault();
+    console.log('You clicked submit.');
+  }
+
 const Register = () => {
     const [formState, setFormState]
 
@@ -59,10 +65,11 @@ const Register = () => {
                
                 />
               </div>
-             
+              <form onSubmit={handleSubmit}></form>
               <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill">
                 Login
               </button>
+              </form>
            
           </div>
         </div>
