@@ -65,7 +65,7 @@ const Register = () => {
                
                 />
               </div>
-              <form onSubmit={handleSubmit}></form>
+              <form onSubmit={handleSubmit}>
               <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill">
                 Login
               </button>
