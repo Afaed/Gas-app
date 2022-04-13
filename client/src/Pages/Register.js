@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { useMutation } from '@apollo/client'
 import { navigate, useNavigate } from "react-router-dom"
+import { ADD_USER } from '../utils/mutations.js'
+import Auth from '../utils/auth'
 
-function Register() {
+const Register = () => {
+    const [formState, setFormState]
+
     let navigate = useNavigate();
     return (
 <div>
