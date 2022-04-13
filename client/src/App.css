@@ -1,3 +1,5 @@
+
+
 /*Home*/
 #home{
   background: black;
@@ -10,6 +12,12 @@
   background: #a29e92;
   background: linear-gradient(90deg, #a29e92 50%, gold 100%);
   min-height: 600px;
+}
+
+/*Section 2*/
+#sectiontwo{
+  background: #a29e92;
+  background: linear-gradient(90deg, #a29e92 50%, gold 100%);
 }
 
 /*Map*/
