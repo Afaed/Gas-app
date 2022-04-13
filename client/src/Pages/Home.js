@@ -40,6 +40,67 @@ function Home() {
                 </div>
             </section>
 
+            <div>
+            <section id="userreview">
+      <div className="container shadow my-5">
+        <div className="row justify-content-center">
+         
+          <div className="col-md-6 p-5">
+            <h1 className="display-6 fw-bolder mb-5 text-warning">Leave Us a Review</h1>
+
+            <div className="mb-3">
+                <label htmlFor="inputName" className="form-label text-warning">
+                  Name
+                </label>
+                <input
+                  type="name"
+                  className="form-control"
+                  id="inputName"
+                  name="name"
+               
+                />
+              </div>
+           
+              <div className="mb-3">
+                <label htmlFor="inputAddress" className="form-label text-warning">
+                  Station Address
+                </label>
+                <input
+                  type="address"
+                  className="form-control"
+                  id="inputAddress"
+                  aria-describedby="addressHelp"
+                  name="address"
+                 
+                 
+                />
+                <div id="addressHelp" className="form-text">
+                 
+                </div>
+              </div>
+              <div className="mb-3">
+                <label htmlFor="inputReview" className="form-label text-warning">
+                  Review
+                </label>
+                <textarea
+                  type="review"
+                  className="form-control"
+                  id="inputReview"
+                  name="review"
+               
+                />
+              </div>
+             
+              <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill">
+                Submit
+              </button>
+           
+          </div>
+        </div>
+      </div>
+      </section>
+    </div>
+
             <section id="sectiontwo">
                 <div className="container my-5 py-5">
                     <div className="row">
