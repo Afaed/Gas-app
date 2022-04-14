@@ -15,7 +15,7 @@ function Form() {
 
 function Login() {
 
-  const [formState, setFormState] = useState({ email: '', password: ''})
+   const [formState, setFormState] = useState({ email: '', password: ''})
 
   const [login, { error }] = useMutation(LOGIN_USER)
 // update state based on form input changes
@@ -53,6 +53,7 @@ function Login() {
   }
 
     let navigate = useNavigate();
+    
     return (
         <div>
             <section id="login">
