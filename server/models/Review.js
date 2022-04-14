@@ -8,17 +8,17 @@ const reviewSchema = new Schema(
           required: true,
           unique: true
         },
-        ReviewText: {
+        reviewText: {
             type: String,
             minLength: 1,
             maxLength: 280
         },
-        CreatedAt: {
+        createdAt: {
             type: Date,
             default: Date.now,
             get: timestamp => dateFormat(timestamp)
         },
-        Username: {
+        username: {
             type: String,
             required: true,
         }

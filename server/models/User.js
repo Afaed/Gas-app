@@ -5,24 +5,24 @@ const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
   {
-    Username: {
+    username: {
       type: String,
       required: true,
       unique: true,
       trim: true
     },
-    Email: {
+    email: {
       type: String,
       required: true,
       unique: true,
       match: [/.+@.+\..+/, 'Must use a valid email address'],
     },
-    Password: {
+    password: {
       type: String,
       required: true,
       minlength: 8
     },
-    Reviews: [
+    reviews: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Review'
