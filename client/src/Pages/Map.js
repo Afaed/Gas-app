@@ -1,7 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import {GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+const mapStyles = require('../assets/mapStyles');
 const sampleObj = require('../utils/sample-obj');
-let gsMarkers = JSON.parse(sampleObj);
+let gsData = JSON.parse(sampleObj);
+
+const gsMarkers = 
+    gsData.map(marker => {
+        const newMarker = marker.address.split("<");
+        console.log(newMarker);
+        marker.address = newMarker[0];
+        console.log(marker);
+        return marker;
+        
+    });
+
+console.log(gsMarkers);
 
 function getStations(endpoint) {
     // fetch(endpoint)
@@ -119,16 +132,56 @@ const NestedMapDependencies = () => {
   
     const [mapData, setMapData] = useState(mockObj);
 
-    return <GoogleMap 
+    const [selectedStation, setSelectedStation] = useState(null);
+    console.log(selectedStation);
+
+    return (
+        <GoogleMap 
             zoom={13} 
             center={mapData.userLocation}
             mapContainerClassName="map-container"
+            options={{
+                styles: mapStyles
+            }}
         >
+            
             {mapData.gsMarkers.map((station) => (
-                <Marker key={station.id} position={{lat: station.location[0], lng: station.location[1]}} icon={'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'} />
+                <Marker 
+                    key={station.id} 
+                    position={{lat: station.location[0], lng: station.location[1]}} 
+                    icon={'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'}
+                    onClick={() => {
+                        setSelectedStation(station);
+                    }}
+                />
             ))}
+
+            {selectedStation && (
+                <InfoWindow
+                    className="info-window"
+                    position={{lat: selectedStation.location[0], lng: selectedStation.location[1]}}
+                    onCloseClick={() => {
+                        setSelectedStation(null);
+                    }}
+                >
+                    <div>
+                        <h5>
+                            {selectedStation.name}
+                        </h5>
+                        <p>
+                            {selectedStation.address}
+                        </p>
+                        
+                    </div>                    
+                </InfoWindow>
+                
+            )}
+
             <Marker position={mapData.userLocation} />
-        </GoogleMap>;
+
+           
+        </GoogleMap>
+    );
 
 }
 
