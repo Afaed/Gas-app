@@ -1,4 +1,4 @@
-import { model, models } from "mongoose";
+// import { model, models } from "mongoose";
 import React, {useState} from "react";
 import { navigate, useNavigate } from "react-router-dom"
 import {useMutation} from "@apollo/client"
@@ -32,7 +32,7 @@ function Login() {
         variables: {...formState}
       });
 
-      Auth.login(data.addUser.token)
+      Auth.login(data.login.token)
     } catch (e)
     {
       console.error(e)
