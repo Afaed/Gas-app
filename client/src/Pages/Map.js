@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {GoogleMap, useLoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+const mapStyles = require('../assets/mapStyles');
 const sampleObj = require('../utils/sample-obj');
 let gsData = JSON.parse(sampleObj);
 
@@ -139,6 +140,9 @@ const NestedMapDependencies = () => {
             zoom={13} 
             center={mapData.userLocation}
             mapContainerClassName="map-container"
+            options={{
+                styles: mapStyles
+            }}
         >
             
             {mapData.gsMarkers.map((station) => (
@@ -154,6 +158,7 @@ const NestedMapDependencies = () => {
 
             {selectedStation && (
                 <InfoWindow
+                    className="info-window"
                     position={{lat: selectedStation.location[0], lng: selectedStation.location[1]}}
                     onCloseClick={() => {
                         setSelectedStation(null);
