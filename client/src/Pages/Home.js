@@ -2,12 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom"
 import Map from './Map';
 
-function Form() 
+function Form() {
   function handleForm(e) {
     e.preventDefault();
     console.log('You clicked submit.');
   }
-
+}
 function Home() {
     let navigate = useNavigate();
     return (
@@ -96,7 +96,7 @@ function Home() {
                
                 />
               </div>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={Form}>
               <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill">
                 Submit
               </button>

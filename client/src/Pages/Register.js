@@ -4,11 +4,12 @@ import { navigate, useNavigate } from "react-router-dom"
 import { ADD_USER } from '../utils/mutations.js'
 import Auth from '../utils/auth'
 
-function Form() 
+function Form() {
   function handleForm(e) {
     e.preventDefault();
     console.log('You clicked submit.');
   }
+}
 
 
 const Register = () => {
