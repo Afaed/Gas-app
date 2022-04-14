@@ -25,12 +25,11 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
 `;
 
 export const ADD_REVIEW = gql`
-mutation addReview(reviewText: String!){
+mutation addReview($reviewText: String!){
     addReview(reviewText: $reviewText){
-        _id
         reviewText
-        createdAt
         username
+        createdAt
     }
 }
-`
+`;
