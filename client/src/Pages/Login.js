@@ -1,6 +1,8 @@
 import { model, models } from "mongoose";
-import React from "react";
+import React, {useState} from "react";
 import { navigate, useNavigate } from "react-router-dom"
+import {useMutation} from "@apollo/client"
+import { LOGIN_USER } from '../utils/mutations.js'
 // import {Login} from './source/models/login.js'
 
 function Form() 
@@ -10,6 +12,44 @@ function Form()
   }
 
 function Login() {
+
+  const [formState, setFormState] = useState({ email: '', password: ''})
+
+  const [login, { error }] = useMutation(LOGIN_USER)
+// update state based on form input changes
+
+  const handleChange = (event) => {
+    const {name, value} = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  //submit registration
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await login({
+        variables: {...formState}
+      });
+
+      Auth.login(data.addUser.token)
+    } catch (e)
+    {
+      console.error(e)
+    }
+
+    //clear form variables
+   setFormState({
+     email: '',
+     password: '',
+   }); 
+  }
+
     let navigate = useNavigate();
     return (
         <div>
@@ -30,8 +70,8 @@ function Login() {
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   name="email"
-                 
-                 
+                  value={formState.email}
+                  onChange={handleChange}
                 />
                 <div id="emailHelp" className="form-text">
                  
@@ -45,7 +85,9 @@ function Login() {
                   type="password"
                   className="form-control"
                   id="exampleInputPassword1"
+                  value={formState.password}
                   name="password"
+                  onChange={handleChange}
                
                 />
               </div>
@@ -54,7 +96,9 @@ function Login() {
               <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill">
                 Login
               </button>
-            </form>           
+            </form>
+
+            {error && <div>Login failed</div>}           
           </div>
         </div>
       </div>

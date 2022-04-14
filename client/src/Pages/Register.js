@@ -10,8 +10,37 @@ function Form()
     console.log('You clicked submit.');
   }
 
+
 const Register = () => {
-    const [formState, setFormState]
+    const [formState, setFormState] = useState({ username: '', email: '', password: ''})
+
+    const [addUser, { error }] = useMutation(ADD_USER)
+
+    const handleChaange = (event) => {
+      const {name, value} = event.target;
+
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    };
+
+    //submit registration
+
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+
+      try {
+        const { data } = await addUser({
+          variables: {...formState}
+        });
+
+        Auth.login(data.addUser.token)
+      } catch (e)
+      {
+        console.error(e)
+      }
+    }
 
     let navigate = useNavigate();
     return (
@@ -32,6 +61,7 @@ const Register = () => {
                   className="form-control"
                   id="inputUsername"
                   name="username"
+                  value={formState.username}
                
                 />
               </div>
@@ -44,6 +74,7 @@ const Register = () => {
                   type="email"
                   className="form-control"
                   id="inputEmail"
+                  value={formState.email}
                   aria-describedby="emailHelp"
                   name="email"
                  
@@ -62,7 +93,7 @@ const Register = () => {
                   className="form-control"
                   id="inputPassword"
                   name="password"
-               
+                  value={formState.password}
                 />
               </div>
               <form onSubmit={handleSubmit}>
@@ -70,7 +101,7 @@ const Register = () => {
                 Login
               </button>
               </form>
-           
+              {error && <div>Login failed</div>}
           </div>
         </div>
       </div>
