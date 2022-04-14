@@ -47,6 +47,7 @@ const Register = () => {
   return (
     <div>
       <section id="register">
+        <button onClick={() => {navigate('/')}} class="btn btn-info header-button">Home</button>
         <div className="container shadow my-5">
           <div className="row justify-content-center">
 
@@ -54,6 +55,7 @@ const Register = () => {
               <h1 className="display-6 fw-bolder mb-5 text-warning">Register</h1>
 
               <div className="mb-3">
+
                 <label htmlFor="inputUsername" className="form-label text-warning">
                   Username
                 </label>

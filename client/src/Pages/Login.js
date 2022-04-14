@@ -50,6 +50,7 @@ function Login() {
     return (
         <div>
             <section id="login">
+            <button onClick={() => {navigate('/')}} class="btn btn-info header-button">Home</button>
       <div className="container shadow my-5">
         <div className="row justify-content-center">
          
