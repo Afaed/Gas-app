@@ -1,9 +1,9 @@
 import React from "react";
 import { navigate, useNavigate } from "react-router-dom"
 
-
-function Login() {
+function Login () {
     let navigate = useNavigate();
+    
     return (
         <div>
             <section id="login">
