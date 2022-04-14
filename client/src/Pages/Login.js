@@ -94,7 +94,7 @@ function Login() {
               </button>
             </form>
 
-            {error && <div>Login failed</div>}           
+            {error && <div className="display-6 fw-bolder mb-5 text-warning">Login failed</div>}           
           </div>
         </div>
       </div>
