@@ -13,47 +13,47 @@ function Form() {
 
 
 const Register = () => {
-    const [formState, setFormState] = useState({ username: '', email: '', password: ''})
+  const [formState, setFormState] = useState({ username: '', email: '', password: '' })
 
-    const [addUser, { error }] = useMutation(ADD_USER)
+  const [addUser, { error }] = useMutation(ADD_USER)
 
-    const handleChaange = (event) => {
-      const {name, value} = event.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-      setFormState({
-        ...formState,
-        [name]: value,
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  //submit registration
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState }
       });
-    };
 
-    //submit registration
-
-    const handleSubmit = async (event) => {
-      event.preventDefault();
-
-      try {
-        const { data } = await addUser({
-          variables: {...formState}
-        });
-
-        Auth.login(data.addUser.token)
-      } catch (e)
-      {
-        console.error(e)
-      }
+      Auth.login(data.addUser.token)
+    } catch (e) 
+    {
+      console.error(e);
     }
+  }
 
-    let navigate = useNavigate();
-    return (
-<div>
-            <section id="register">
-      <div className="container shadow my-5">
-        <div className="row justify-content-center">
-         
-          <div className="col-md-6 p-5">
-            <h1 className="display-6 fw-bolder mb-5 text-warning">Register</h1>
+  let navigate = useNavigate();
+  return (
+    <div>
+      <section id="register">
+        <div className="container shadow my-5">
+          <div className="row justify-content-center">
 
-            <div className="mb-3">
+            <div className="col-md-6 p-5">
+              <h1 className="display-6 fw-bolder mb-5 text-warning">Register</h1>
+
+              <div className="mb-3">
                 <label htmlFor="inputUsername" className="form-label text-warning">
                   Username
                 </label>
@@ -63,10 +63,10 @@ const Register = () => {
                   id="inputUsername"
                   name="username"
                   value={formState.username}
-               
+                  onChange={handleChange}
                 />
               </div>
-           
+
               <div className="mb-3">
                 <label htmlFor="inputEmail" className="form-label text-warning">
                   Email address
@@ -78,11 +78,10 @@ const Register = () => {
                   value={formState.email}
                   aria-describedby="emailHelp"
                   name="email"
-                 
-                 
+                  onChange={handleChange}
                 />
                 <div id="emailHelp" className="form-text">
-                 
+
                 </div>
               </div>
               <div className="mb-3">
@@ -95,20 +94,21 @@ const Register = () => {
                   id="inputPassword"
                   name="password"
                   value={formState.password}
+                  onChange={handleChange}
                 />
               </div>
               <form onSubmit={handleSubmit}>
-              <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill">
-                Login
-              </button>
+                <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill">
+                  Login
+                </button>
               </form>
               {error && <div>Login failed</div>}
+            </div>
           </div>
         </div>
-      </div>
       </section>
     </div>
-    )
+  )
 }
 
 export default Register;

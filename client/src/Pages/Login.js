@@ -6,13 +6,6 @@ import { LOGIN_USER } from '../utils/mutations.js'
 import Auth from '../utils/auth.js'
 // import {Login} from './source/models/login.js'
 
-function Form() {
-  function handleForm(e) {
-    e.preventDefault();
-    console.log('You clicked submit.');
-  }
-}
-
 function Login() {
 
    const [formState, setFormState] = useState({ email: '', password: ''})

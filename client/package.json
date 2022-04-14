@@ -2,6 +2,7 @@
   "name": "pump-plunder",
   "version": "1.0.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@react-google-maps/api": "^2.8.1",
     "@testing-library/jest-dom": "^5.16.3",
