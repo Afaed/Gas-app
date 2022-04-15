@@ -26,7 +26,7 @@
 ## Installation
 
 - In the root directory: npm install
-- Navigate to the cilent directory: npm install
+- Navigate to the client directory: npm install
 - From client: npm start
 
 ## Usage
