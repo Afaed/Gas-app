@@ -31,8 +31,9 @@
 
 ## Usage
 
-- Provide instructions and examples for use  
-- ***Technology Used***: MDBootstrap, mySQL, Node.js  
+### [Click Here to use!](https://pump-plunder.herokuapp.com/)
+
+- ***Technology Used***: React, MongoDB, Node.js, Express.js, Bootstrap, GraphQL
 
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
