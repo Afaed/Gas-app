@@ -3,7 +3,7 @@ const dateFormat = require('../utils/dateFormat.js')
 
 const reviewSchema = new Schema(
     {
-        stationId: {
+        StationId: {
           type: String,
           required: true,
           unique: true
