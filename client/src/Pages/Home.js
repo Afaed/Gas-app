@@ -2,6 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom"
 import Map from './Map';
 
+function Form() {
+  function handleForm(e) {
+    e.preventDefault();
+    console.log('You clicked submit.');
+  }
+}
 function Home() {
     let navigate = useNavigate();
     return (
@@ -90,11 +96,11 @@ function Home() {
                
                 />
               </div>
-             
+              <form onSubmit={Form}>
               <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill">
                 Submit
               </button>
-           
+            </form>
           </div>
         </div>
       </div>
@@ -112,63 +118,63 @@ function Home() {
                     </div>
                     <div className="row mt-5">
                         <div className="col-md-4">
-                        <div class="card p-3 bg-black">
+                        <div className="card p-3 bg-black">
   
-  <div class="card-body text-center text-warning">
+  <div className="card-body text-center text-warning">
       <i className="fa fa-car fa-4x mb-4 text-primary"></i>
-    <h5 class="card-title mb-3 fs-4 fw-bold">Patric A.</h5>
-    <p class="card-text lead">The man behind the counter was very nice. However the soda I bought tastes just like whatever air freshener they use in the store. At least I hope that was your freshener. Gross.</p>
+    <h5 className="card-title mb-3 fs-4 fw-bold">Patric A.</h5>
+    <p className="card-text lead">The man behind the counter was very nice. However the soda I bought tastes just like whatever air freshener they use in the store. At least I hope that was your freshener. Gross.</p>
       
   </div>
 </div>
                         </div>
                         <div className="col-md-4">
-                        <div class="card p-3 bg-black">
+                        <div className="card p-3 bg-black">
   
-  <div class="card-body text-center text-warning">
+  <div className="card-body text-center text-warning">
       <i className="fa fa-money fa-4x mb-4 text-primary"></i>
-    <h5 class="card-title mb-3 fs-4 fw-bold">Georgie H.</h5>
-    <p class="card-text lead">The 2 men that work in there during the day are very nice and helpful. I love going there seeing them . They are funny and I need a smile and a good laugh once in awhile. They are always in a good mood and showing us new things that have come in.</p>
+    <h5 className="card-title mb-3 fs-4 fw-bold">Georgie H.</h5>
+    <p className="card-text lead">The 2 men that work in there during the day are very nice and helpful. I love going there seeing them . They are funny and I need a smile and a good laugh once in awhile. They are always in a good mood and showing us new things that have come in.</p>
   </div>
 </div>
                         </div>
                         <div className="col-md-4">
-                        <div class="card p-3 bg-black">
+                        <div className="card p-3 bg-black">
   
-  <div class="card-body text-center text-warning">
+  <div className="card-body text-center text-warning">
       <i className="fa fa-area-chart fa-4x mb-4 text-primary"></i>
-    <h5 class="card-title mb-3 fs-4 fw-bold">Lucy T.</h5>
-    <p class="card-text lead">Slowest pumps ever must be because they have no automatic shut-off on the pump!? Wasted gas and money because it took so long to fill that I sat in my car only to start hearing the sound of water pouring. Turns out the pump over flowed. Dude at register didn't even care like he was use to it!</p>
+    <h5 className="card-title mb-3 fs-4 fw-bold">Lucy T.</h5>
+    <p className="card-text lead">Slowest pumps ever must be because they have no automatic shut-off on the pump!? Wasted gas and money because it took so long to fill that I sat in my car only to start hearing the sound of water pouring. Turns out the pump over flowed. Dude at register didn't even care like he was use to it!</p>
   </div>
 </div>
                         </div>
                         <div className="col-md-4">
-                        <div class="card p-3 bg-black">
+                        <div className="card p-3 bg-black">
   
-  <div class="card-body text-center text-warning">
+  <div className="card-body text-center text-warning">
       <i className="fa fa-car fa-4x mb-4 text-primary"></i>
-    <h5 class="card-title mb-3 fs-4 fw-bold">Alex R.</h5>
-    <p class="card-text lead">Only got gas here the one time. Didn't have any problems. Didn't notice anything extraordinary.</p>
+    <h5 className="card-title mb-3 fs-4 fw-bold">Alex R.</h5>
+    <p className="card-text lead">Only got gas here the one time. Didn't have any problems. Didn't notice anything extraordinary.</p>
   </div>
 </div>
                         </div>
                         <div className="col-md-4">
-                        <div class="card p-3 bg-black">
+                        <div className="card p-3 bg-black">
   
-  <div class="card-body text-center text-warning">
+  <div className="card-body text-center text-warning">
       <i className="fa fa-car fa-4x mb-4 text-primary"></i>
-    <h5 class="card-title mb-3 fs-4 fw-bold">Chris F.</h5>
-    <p class="card-text lead">Clean, well stocked good hot food items!</p>
+    <h5 className="card-title mb-3 fs-4 fw-bold">Chris F.</h5>
+    <p className="card-text lead">Clean, well stocked good hot food items!</p>
   </div>
 </div>
                         </div>
                         <div className="col-md-4">
-                        <div class="card p-3 bg-black">
+                        <div className="card p-3 bg-black">
   
-  <div class="card-body text-center text-warning">
+  <div className="card-body text-center text-warning">
       <i className="fa fa-car fa-4x mb-4 text-primary"></i>
-    <h5 class="card-title mb-3 fs-4 fw-bold">Wolfgang H.</h5>
-    <p class="card-text lead">I grabbed a bag of pop rocks when I got into the car it was filled with ants so this should be a 0/5 review</p>
+    <h5 className="card-title mb-3 fs-4 fw-bold">Wolfgang H.</h5>
+    <p className="card-text lead">I grabbed a bag of pop rocks when I got into the car it was filled with ants so this should be a 0/5 review</p>
   </div>
 </div>
                         </div>
